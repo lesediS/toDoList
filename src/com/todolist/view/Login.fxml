@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: afb4d6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.todolist.controller.LoginSignUpController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="674.0" style="-fx-background-color: e7e8f2;">
+         <children>
+            <Label alignment="CENTER" layoutX="310.0" layoutY="14.0" prefHeight="34.0" prefWidth="54.0" text="Login">
+               <font>
+                  <Font name="Leelawadee UI" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxt" layoutX="162.0" layoutY="90.0" prefHeight="26.0" prefWidth="350.0" promptText="Username">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordTxt" layoutX="162.0" layoutY="148.0" prefHeight="30.0" prefWidth="350.0" promptText="Password">
+               <font>
+                  <Font name="Leelawadee UI" size="12.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="loginBtn" layoutX="262.0" layoutY="221.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: b4d6af;" text="Login">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="signupBtn" layoutX="262.0" layoutY="279.0" mnemonicParsing="false" onAction="#goToSignUp" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: d6afb4;" text="Sign Up">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../com/todolist/view/moon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="524.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../com/todolist/view/mars.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
