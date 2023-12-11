@@ -41,12 +41,12 @@
             </Button>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@com/todolist/view/moon.png" />
+                  <Image url="@../../../resources/moon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="524.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@com/todolist/view/mars.png" />
+                  <Image url="@../../../resources/mars.png" />
                </image>
             </ImageView>
          </children>

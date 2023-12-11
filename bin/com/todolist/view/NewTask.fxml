@@ -20,12 +20,12 @@
    <children>
       <ImageView fx:id="addItemImageLeft" fitHeight="150.0" fitWidth="175.0" layoutX="29.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
-            <Image url="@stars.png" />
+            <Image url="@../../../resources/stars.png" />
          </image>
       </ImageView>
       <ImageView fx:id="addItemImageRight" fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@stars.png" />
+            <Image url="@../../../resources/stars.png" />
          </image>
       </ImageView>
       <Label fx:id="newTaskHeading" layoutX="299.0" layoutY="45.0" text="New Task">
