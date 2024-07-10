@@ -9,7 +9,6 @@ public class User {
 
 	public User() {}
 	
-	
 	public User(int userId, String firstName, String surname, String userName, String passWord) {
 	    this.UserId = userId;
 		this.FirstName = firstName;
