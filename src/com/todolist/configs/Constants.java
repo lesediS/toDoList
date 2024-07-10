@@ -7,8 +7,6 @@ public class Constants {
 	
 	//columns in -> user table
 	public static final String USERS_ID = "userId";
-	public static final String USERS_FIRSTNAME = "firstname";
-	public static final String USERS_SURNAME = "surname";
 	public static final String USERS_USERNAME = "username";
 	public static final String USERS_PASSWORD = "password";
 	

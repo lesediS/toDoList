@@ -72,9 +72,8 @@ public class DatabaseHandler extends Configuration {
 	//create user on sign up
 	public boolean createSignUpUser(User user) {
 		//insert into mysql db statement
-		String insert = "INSERT INTO " + Constants.USERS_TBL + "(" + Constants.USERS_FIRSTNAME
-				+ ", " + Constants.USERS_SURNAME + ", " + Constants.USERS_USERNAME + ", "
-				+ Constants.USERS_PASSWORD + ")" + "VALUES(?, ?, ?, ?)";
+		String insert = "INSERT INTO " + Constants.USERS_TBL + "(" + Constants.USERS_USERNAME + ", "
+				+ Constants.USERS_PASSWORD + ")" + "VALUES(?, ?)";
 		
 		try {
 			
@@ -82,10 +81,8 @@ public class DatabaseHandler extends Configuration {
 			PreparedStatement prepStatement = conn.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 			
 			//Save user details
-			prepStatement.setString(1, user.getFirstName());
-			prepStatement.setString(2, user.getSurname());
-			prepStatement.setString(3, user.getUserName());
-			prepStatement.setString(4, PasswordUsernameController.hashPassword(user.getPassWord())); //Hash password entered			
+			prepStatement.setString(1, user.getUserName());
+			prepStatement.setString(2, PasswordUsernameController.hashPassword(user.getPassWord())); //Hash password entered			
 			int rowsInserted = prepStatement.executeUpdate();
 			
 			if(rowsInserted > 0) {

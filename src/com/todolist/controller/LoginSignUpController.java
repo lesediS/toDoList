@@ -49,8 +49,6 @@ public class LoginSignUpController {
     
     private DatabaseHandler databaseHandler;
     
-    @FXML
-    private TextField regFirstNameTxt;
     
     @FXML
     private Button regLoginBtn;
@@ -61,8 +59,6 @@ public class LoginSignUpController {
     @FXML
     private Button regSignupBtn;
     
-    @FXML
-    private TextField regSurnameTxt;
     
     @FXML
     private TextField regUsernameTxt;
@@ -104,8 +100,6 @@ public class LoginSignUpController {
 
                             //The verified user is now logged in
                             Session.setLoggedInUser(new User(resultSet.getInt(Constants.USERS_ID),
-                            		resultSet.getString(Constants.USERS_FIRSTNAME),
-                            		resultSet.getString(Constants.USERS_SURNAME),
                             		resultSet.getString(Constants.USERS_USERNAME),
                             		resultSet.getString(Constants.USERS_PASSWORD)));
                             
@@ -170,12 +164,10 @@ public class LoginSignUpController {
 
     @FXML
     public void signUp(ActionEvent e) {
-        String signUpFirstName = regFirstNameTxt.getText().trim();
-        String signUpSurname = regSurnameTxt.getText().trim();
         String signUpUsername = regUsernameTxt.getText().trim();
         String signUpPass = regPasswordTxt.getText().trim();
 
-        if (signUpFirstName.isEmpty() || signUpSurname.isEmpty() || signUpUsername.isEmpty() || signUpPass.isEmpty()) {
+        if (signUpUsername.isEmpty() || signUpPass.isEmpty()) {
             System.out.println("Please enter all sign-up details");
             return;
         }
@@ -183,13 +175,11 @@ public class LoginSignUpController {
         // Check if the username is unique
         try {
 			if (PasswordUsernameController.isUsernameUnique(databaseHandler.getDBCon(), signUpUsername)) {
-			    User user = new User(0, signUpFirstName, signUpSurname, signUpUsername, signUpPass);
+			    User user = new User(0, signUpUsername, signUpPass);
 			    
 			    if (databaseHandler.createSignUpUser(user)) {
 			    	//Session.setLoggedInUser(user);
 			    	
-			    	regFirstNameTxt.clear();
-			    	regSurnameTxt.clear();
 			    	regUsernameTxt.clear();
 			    	regPasswordTxt.clear();
 			    	
